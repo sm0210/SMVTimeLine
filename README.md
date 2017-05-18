@@ -3,6 +3,9 @@ SMVTimeLine移动端水平拖拽时间轴，依赖Jquery，有问题请发邮件
 
 ##实例化SMVTimeLine拖拽时间轴
 
+##效果
+![](https://github.com/sm0210/SMVTimeLine/blob/master/SMVTimeLine.png "SMVTimeLine")
+
 ````
 vtimelineObj = $('#vtimeline').initSMVTimeLine({
 	//必须参数: 数据集
