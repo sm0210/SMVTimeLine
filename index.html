@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <title>SMVTimeLine移动端水平拖拽时间轴</title>
+        <!--
+        	@author:SM
+            @e-mail:sm0210@qq.com
+            @desc:SMVTimeLine 移动端水平拖拽滚动条
+            @version:SMVTimeLine 0.1
+        -->
+        <!--SMVTimeLine移动端水平拖拽时间轴插件样式-->
+        <link rel="stylesheet" type="text/css" href="css/SMVTimeLine.css"/>
+        <!--  -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <!--SMVTimeLine移动端水平拖拽时间轴插件-->
+        <script type="text/javascript" src="js/jquery-SMVTimeLine.js"></script>
+        <!--SMVTimeLine案例-->
+        <script type="text/javascript">
+			//模拟记录，只支持"天(day)、月(month)、年(year)"，根据type来判断,time传入实际数值用数字表示
+			var data = [
+							{type:'month', desc:'参考净收益率：9.00%', timeTitle:'9m', time:9 },
+							{type:'day', desc:'参考净收益率：0.18%', timeTitle:'90d', time:90 },
+							{type:'month', desc:'参考净收益率：6.00%', timeTitle:'6m', time:6 },
+							{type:'month', desc:'参考净收益率：24.00%', timeTitle:'24m', time:24 },
+							{type:'month', desc:'参考净收益率：12.00%', timeTitle:'12m', time:12 },
+							{type:'year', desc:'参考净收益率：40.00%', timeTitle:'4y', time:4 },
+							{type:'year', desc:'参考净收益率：30.00%', timeTitle:'3y', time:3 },
+							{type:'day', desc:'参考净收益率：0.15%', timeTitle:'15d', time:15 },
+					];
+			//
+			var vtimelineObj;
+			//
+        	$(function(){
+				  //实例化SMVTimeLine水平拖拽时间轴
+				  vtimelineObj = $('#vtimeline').initSMVTimeLine({
+					//必须参数: 数据集
+					data: data,
+					//可配置参数: 一天偏移基础值,[默认0.42根据天来计算，使用时根据实际情况设置,不要设置太大]
+					//baseValue: 0.9,
+					//可配置参数: 时间字段，默认time
+					//timeField: 'time',
+					//可配置参数: 时间展示字段,默认:timeTitle
+					//timeTitleField: 'timeTitle',
+					//可配置参数: 描述字段，默认:desc
+					//descField: 'desc',
+					//可配置参数: 类型字段，默认:type
+					//typeField: 'type',
+					//监听点击事件
+					onClick: vtimelineClick
+				  }); 
+				  
+				  
+				  //获取data
+				  //vtimelineObj.getData();
+			});
+			
+			/*
+				自定义时间轴事件监听
+			*/
+			function vtimelineClick(data){
+				//
+				if(data){
+					console.log(data);	
+				}
+			}
+			/*
+				重新渲染时间轴
+			*/
+			function reloadTimeLine(){
+				//重新加载
+				data[0] = {type:'month', desc:'参考净收益：19.00%', timeTitle:'19m', time:19 };
+				data[data.length -1 ] = {type:'month', desc:'参考净收益率3.0%', timeTitle:'30m', time:30 };
+				//重新渲染时间轴
+				vtimelineObj.reload(data);
+			}
+        </script>
+        <!--  -->
+        <style type="text/css">
+        	body {
+        		background-color: #0098D7;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div style="margin-top:100px;color: red;">请在移动端横向拖拽查看效果,<span onClick="reloadTimeLine()">点击重新渲染</span></div><br/>
+    
+    	<!-- 滑动横向时间轴demo -->
+    	<div class="vtimeline" id="vtimeline"></div>
+    	<!-- 滑动横向时间轴 demo -->
+    	<div style="margin-top:100px;height: 900px;"></div>
+    </body>
+</html>
