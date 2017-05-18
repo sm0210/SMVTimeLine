@@ -34,13 +34,13 @@ vtimelineObj = $('#vtimeline').initSMVTimeLine({
  
  ##重新渲染时间轴
 ````
-	vtimelineObj.reload(data);
+vtimelineObj.reload(data);
  ````
  
  ##获取时间轴数据
  
  ````
- 	vtimelineObj.getData();
+vtimelineObj.getData();
  ````
  
  ###如果您觉得此文有帮助，可以打赏点钱给我支付宝sm0210@qq.com ，或扫描二维码
