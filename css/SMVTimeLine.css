@@ -1,0 +1,122 @@
+/*
+	SMVTimeLine移动端水平拖拽时间轴样式
+	@author:SM
+	@e-mail:sm0210@qq.com
+	@desc:SMVTimeLine 移动端水平拖拽滚动条
+	@version:SMVTimeLine 0.1
+*/
+*,*::after,*::before {
+    margin: 0px;
+    padding: 0px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-input-placeholder-color: transparent;
+    -webkit-overflow-scrolling: touch;
+}
+
+/**/
+body{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -ms-touch-action: none;
+    color: #676767;
+	font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+
+/**
+ * 不显示Scrollbar
+*/ 
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+
+/*垂直拖拽时间轴*/
+.vtimeline {
+	font-size: 14px;
+	height: 80px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	width: 100%;
+	background: transparent url("../images/vtimeline-bg.png") repeat-x left 52px;
+	position: relative;
+}
+/**/
+.vtimeline  ul {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	margin-left: 63px;
+}
+/**/
+.vtimeline  ul li> .vtimeline-note-div {
+	position: absolute;
+	bottom: 0px;
+	min-width: 63px;
+}
+/**/
+.vtimeline-note-div>span {
+	/* display: inline-block; */
+	height: 15px;
+	line-height: 15px;
+	min-width: 12px;
+	text-align: center;
+	overflow: hidden;
+	color: #fff;
+}
+
+/*圆点*/
+.vtimeline-note-cicle {
+	position: absolute;
+	width: 15px;
+	bottom: 20px;
+	background: transparent url('../images/vtimeline-circle-default.png') no-repeat 0px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+	
+}
+/*选中项圆点*/
+.vtimeline-note-div>span.vtimeline-note-cicle-active {
+	background: transparent url('../images/vtimeline-circle-active.png') no-repeat 0px;
+	-webkit-background-size: 15px 40px;
+	background-size: 15px 40px;
+	height: 40px;
+}
+/**/
+.vtimeline {
+	display: -webkit-box;
+}
+/**/
+.vtimeline-left {
+	width: 53px;
+	padding-left: 10px;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: end;
+	box-align: end;
+	color: #fff;
+	/* background: transparent url("../images/vtimeline-bg-left.png") repeat-x left 52px; */
+}
+/**/
+.vtimeline-left>span {
+	opacity: 0.4;
+}
+/**/
+.vtimeline-right {
+	position: relative;
+	bottom: 0px;
+	height: 100%;
+}
+/*说明*/
+.vtimeline-note-title {
+	position: relative;
+	height: auto;
+	left: 0px;
+	color: #fff;
+	width: auto;
+	visibility: hidden;
+}
