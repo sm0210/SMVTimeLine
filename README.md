@@ -1,14 +1,15 @@
 # SMVTimeLine
 SMVTimeLine移动端水平拖拽时间轴，依赖Jquery，有问题请发邮件：sm0210@qq.com
 
-##实例化SMVTimeLine拖拽时间轴
+## 实例化SMVTimeLine拖拽时间轴
 
 
-##效果
+## 效果
 
 
 ![](https://github.com/sm0210/SMVTimeLine/blob/master/SMVTimeLine.png "SMVTimeLine")
 
+## 实例化组件
 ````
 vtimelineObj = $('#vtimeline').initSMVTimeLine({
 	//必须参数: 数据集
@@ -28,7 +29,7 @@ vtimelineObj = $('#vtimeline').initSMVTimeLine({
 }); 
  ````
  
- ##自定义监听事件
+ ## 自定义监听事件
  ````
  function vtimelineClick(data){
 	//
@@ -38,12 +39,12 @@ vtimelineObj = $('#vtimeline').initSMVTimeLine({
 }
  ````
  
- ##重新渲染时间轴
+ ## 重新渲染时间轴
 ````
 vtimelineObj.reload(data);
  ````
  
- ##获取时间轴数据
+ ## 获取时间轴数据
  
  ````
 vtimelineObj.getData();
