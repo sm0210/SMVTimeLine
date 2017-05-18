@@ -42,7 +42,6 @@
 			});
 			//获取最小值
 			s.minValue = Math.min.apply(null, s._result);
-			console.log(s.minValue);
 		},
 		/**
 			实例化SMVTimeLine
@@ -53,7 +52,6 @@
 			//
 			var htmlTpl = s.tplContent[0];
 			
-			console.log(s.data);
 			//
 			$.grep(s.data, function(record, index){
 				//计算偏移距离
